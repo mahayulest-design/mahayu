@@ -1,0 +1,8 @@
+{
+  "name": "THE KHAN'S AIRCON",
+  "description": "Laman web rasmi perkhidmatan servis aircond profesional di Kuala Lumpur dan Selangor oleh THE KHAN'S BIZ WORLDWIDE SDN BHD.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
