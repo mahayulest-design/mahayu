@@ -25,6 +25,8 @@ export default function HeroBooking() {
     'Chemical Service (Chemical Wash)',
     'Water Leaking Rectification',
     'Troubleshooting & Repair',
+    'Ceiling Cassette Routine Service',
+    'Ceiling Cassette Chemical Wash',
     'Dismantle Aircon Unit',
     'Install New Aircon (Upgrade to Inverter)',
   ];
