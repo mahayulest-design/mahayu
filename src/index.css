@@ -32,3 +32,29 @@ body {
   font-family: var(--font-display);
 }
 
+/* Custom Hero Layout and Color Styling */
+.hero-left-content {
+  color: #ffffff; /* Mengubah semua teks menjadi putih */
+  max-width: 55%; /* Mengatur agar teks tidak melebar memenuhi layar */
+  padding-left: 20px;
+}
+
+.hero-left-content h1 {
+  font-size: 2.5rem; /* Membuat judul utama besar dan tegas */
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero-left-content p {
+  font-size: 1.1rem;
+  line-height: 1.6; /* Memberikan ruang antar baris teks */
+  color: #e2e8f0; /* Warna putih sedikit soft untuk deskripsi */
+}
+
+@media (max-width: 1024px) {
+  .hero-left-content {
+    max-width: 100%;
+    padding-left: 0;
+  }
+}
+

@@ -37,7 +37,7 @@ export default function Header({ activeSection, scrollTo }: HeaderProps) {
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300">
+      <header className="sticky top-0 z-50 bg-[#0B1B3D] backdrop-blur-md border-b border-white/10 shadow-lg transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Left side: Brand Logo */}
@@ -46,10 +46,10 @@ export default function Header({ activeSection, scrollTo }: HeaderProps) {
                 <Wind className="w-5.5 h-5.5 animate-pulse" />
               </div>
               <div className="flex flex-col">
-                <span className="text-base font-extrabold tracking-tight text-gray-900 font-display">
-                  THE KHAN'S <span className="text-brand-green">AIRCON</span>
+                <span className="text-base font-extrabold tracking-tight text-white font-display">
+                  THE KHAN'S <span className="text-brand-green font-black">AIRCON</span>
                 </span>
-                <span className="text-[8px] text-gray-400 font-mono tracking-widest -mt-1 uppercase">
+                <span className="text-[8px] text-white/60 font-mono tracking-widest -mt-1 uppercase">
                   BIZ WORLDWIDE
                 </span>
               </div>
@@ -63,10 +63,10 @@ export default function Header({ activeSection, scrollTo }: HeaderProps) {
                   <button
                     key={item.id}
                     onClick={() => handleNavClick(item.id)}
-                    className={`relative px-2.5 py-2 text-xs xl:text-sm font-semibold tracking-wide rounded-md transition-all duration-200 cursor-pointer ${
+                    className={`relative px-3 py-2 text-xs xl:text-sm font-bold tracking-wide rounded-lg transition-all duration-200 cursor-pointer ${
                       isActive
-                        ? 'text-brand-green font-bold'
-                        : 'text-gray-600 hover:text-brand-green hover:bg-gray-50'
+                        ? 'text-white bg-white/15'
+                        : 'text-white/80 hover:text-white hover:bg-white/10'
                     }`}
                   >
                     {item.label}
@@ -89,7 +89,7 @@ export default function Header({ activeSection, scrollTo }: HeaderProps) {
                 href={BUSINESS_INFO.links.whatsapp}
                 target="_blank"
                 rel="no-referrer"
-                className="flex items-center space-x-1.5 text-gray-700 hover:text-brand-green transition-colors text-xs xl:text-sm font-bold bg-gray-50 hover:bg-brand-green-light px-3 py-2 rounded-lg border border-gray-100"
+                className="flex items-center space-x-1.5 text-white hover:text-brand-green transition-colors text-xs xl:text-sm font-bold bg-white/10 hover:bg-white/15 px-3 py-2 rounded-lg border border-white/10"
               >
                 <Phone className="w-3.5 h-3.5 text-brand-green" />
                 <span>+60177903021</span>
@@ -99,11 +99,11 @@ export default function Header({ activeSection, scrollTo }: HeaderProps) {
               <div className="relative">
                 <button
                   onClick={() => setLangDropdownOpen(!langDropdownOpen)}
-                  className="flex items-center space-x-1 text-gray-600 hover:text-gray-900 text-xs xl:text-sm font-semibold py-2 px-1 hover:bg-gray-50 rounded-lg cursor-pointer transition-colors"
+                  className="flex items-center space-x-1 text-white/90 hover:text-white text-xs xl:text-sm font-semibold py-2 px-2 hover:bg-white/10 rounded-lg cursor-pointer transition-colors"
                 >
-                  <Globe className="w-3.5 h-3.5 text-gray-400" />
+                  <Globe className="w-3.5 h-3.5 text-white/60" />
                   <span>{selectedLang}</span>
-                  <ChevronDown className="w-3 h-3 text-gray-400" />
+                  <ChevronDown className="w-3 h-3 text-white/50" />
                 </button>
 
                 <AnimatePresence>
@@ -115,7 +115,7 @@ export default function Header({ activeSection, scrollTo }: HeaderProps) {
                         initial={{ opacity: 0, y: 5 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 5 }}
-                        className="absolute right-0 mt-1.5 w-36 bg-white border border-gray-100 rounded-lg shadow-lg py-1 z-20 text-xs"
+                        className="absolute right-0 mt-1.5 w-36 bg-[#0B1B3D] border border-white/10 rounded-lg shadow-lg py-1 z-20 text-xs"
                       >
                         {languages.map((lang) => (
                           <button
@@ -124,8 +124,8 @@ export default function Header({ activeSection, scrollTo }: HeaderProps) {
                               setSelectedLang(lang);
                               setLangDropdownOpen(false);
                             }}
-                            className={`w-full text-left px-3 py-2 hover:bg-gray-50 flex items-center justify-between cursor-pointer ${
-                              selectedLang === lang ? 'text-brand-green font-bold bg-brand-green-light/20' : 'text-gray-600'
+                            className={`w-full text-left px-3 py-2 hover:bg-white/10 flex items-center justify-between cursor-pointer ${
+                              selectedLang === lang ? 'text-brand-green font-bold bg-white/15' : 'text-white/80'
                             }`}
                           >
                             <span>{lang}</span>
@@ -141,9 +141,9 @@ export default function Header({ activeSection, scrollTo }: HeaderProps) {
               {/* Sign In Button */}
               <button
                 onClick={() => setShowSignInModal(true)}
-                className="flex items-center space-x-1.5 bg-gray-900 border border-gray-900 text-white hover:bg-gray-850 px-4 py-2 rounded-lg text-xs xl:text-sm font-bold transition-all hover:shadow-md cursor-pointer"
+                className="flex items-center space-x-1.5 bg-white border border-white text-slate-900 hover:bg-slate-100 hover:border-slate-100 px-4 py-2 rounded-lg text-xs xl:text-sm font-bold transition-all hover:shadow-md cursor-pointer"
               >
-                <User className="w-3.5 h-3.5" />
+                <User className="w-3.5 h-3.5 text-slate-800" />
                 <span>Sign in</span>
               </button>
             </div>
@@ -154,14 +154,14 @@ export default function Header({ activeSection, scrollTo }: HeaderProps) {
                 href={BUSINESS_INFO.links.whatsapp}
                 target="_blank"
                 rel="no-referrer"
-                className="flex items-center space-x-1 text-xs font-bold text-brand-green bg-brand-green-light px-2.5 py-1.5 rounded-md"
+                className="flex items-center space-x-1 text-xs font-bold text-white bg-brand-green hover:bg-brand-green-hover px-2.5 py-1.5 rounded-md"
               >
-                <Phone className="w-3.5 h-3.5" />
+                <Phone className="w-3.5 h-3.5 text-white" />
                 <span>Call US</span>
               </a>
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="inline-flex items-center justify-center p-2 rounded-lg text-gray-600 hover:text-brand-green hover:bg-gray-100 focus:outline-none transition-colors"
+                className="inline-flex items-center justify-center p-2 rounded-lg text-white hover:bg-white/15 focus:outline-none transition-colors"
                 aria-expanded={isOpen}
               >
                 {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -178,7 +178,7 @@ export default function Header({ activeSection, scrollTo }: HeaderProps) {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.25 }}
-              className="lg:hidden border-t border-gray-100 bg-white"
+              className="lg:hidden border-t border-white/10 bg-[#0B1B3D]"
             >
               <div className="px-4 pt-2 pb-6 space-y-1 sm:px-6">
                 {menuItems.map((item) => {
@@ -189,8 +189,8 @@ export default function Header({ activeSection, scrollTo }: HeaderProps) {
                       onClick={() => handleNavClick(item.id)}
                       className={`block w-full text-left px-4 py-2.5 rounded-lg text-xs sm:text-sm font-bold tracking-wide transition-all ${
                         isActive
-                          ? 'bg-brand-green-light text-brand-green'
-                          : 'text-gray-600 hover:bg-gray-50 hover:text-brand-green'
+                          ? 'bg-white/10 text-white font-extrabold'
+                          : 'text-white/80 hover:bg-white/5 hover:text-white'
                       }`}
                     >
                       {item.label}
@@ -199,19 +199,19 @@ export default function Header({ activeSection, scrollTo }: HeaderProps) {
                 })}
                 
                 {/* Mobile Language & Sign In Options */}
-                <div className="pt-4 border-t border-gray-100 space-y-2.5">
-                  <div className="flex items-center justify-between px-4 py-2 text-xs text-gray-505 font-bold">
-                    <span className="flex items-center space-x-1 text-gray-500">
-                      <Globe className="w-3.5 h-3.5 text-gray-400" />
+                <div className="pt-4 border-t border-white/10 space-y-2.5">
+                  <div className="flex items-center justify-between px-4 py-2 text-xs text-white/90 font-bold">
+                    <span className="flex items-center space-x-1 text-white/70">
+                      <Globe className="w-3.5 h-3.5 text-white/50" />
                       <span>Select Language</span>
                     </span>
                     <select
                       value={selectedLang}
                       onChange={(e) => setSelectedLang(e.target.value)}
-                      className="bg-transparent border-0 text-brand-green font-bold focus:ring-0 text-xs py-0 pl-0 pr-6"
+                      className="bg-transparent border-0 text-white font-bold focus:ring-0 text-xs py-0 pl-0 pr-6 bg-[#0B1B3D]"
                     >
                       {languages.map((l) => (
-                        <option key={l} value={l} className="text-gray-800">{l}</option>
+                        <option key={l} value={l} className="text-slate-800 bg-white">{l}</option>
                       ))}
                     </select>
                   </div>
@@ -221,13 +221,13 @@ export default function Header({ activeSection, scrollTo }: HeaderProps) {
                       setIsOpen(false);
                       setShowSignInModal(true);
                     }}
-                    className="w-full flex items-center justify-center space-x-1.5 bg-gray-900 text-white font-bold py-3 rounded-lg text-xs"
+                    className="w-full flex items-center justify-center space-x-1.5 bg-white text-slate-900 hover:bg-slate-100 font-bold py-3 rounded-lg text-xs"
                   >
                     <User className="w-4 h-4" />
                     <span>Sign in to Dashboard</span>
                   </button>
 
-                  <div className="px-4 text-[10px] text-gray-500 font-mono text-center pt-2">
+                  <div className="px-4 text-[10px] text-white/50 font-mono text-center pt-2">
                     OPERATING HOURS: {BUSINESS_INFO.workingHours}
                   </div>
                   

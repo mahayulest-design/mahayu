@@ -1,10 +1,10 @@
 import React from 'react';
-import { Home, Building2, Flame, Snowflake, ShieldCheck, HelpCircle, Wrench, RefreshCw, LayoutGrid } from 'lucide-react';
+import { Home, Building2, Flame, Droplet, Snowflake, ShieldCheck, HelpCircle, Wrench, RefreshCw, LayoutGrid } from 'lucide-react';
 import { SERVICES_LIST, BUSINESS_INFO } from '../data/businessData';
 
 export default function Services() {
   return (
-    <div className="bg-brand-grey py-16 lg:py-24 space-y-24 scroll-mt-20">
+    <div className="bg-[#FFFFFF] py-16 lg:py-24 space-y-24 scroll-mt-20">
       
       {/* SECTION 1: RESIDENTIAL SERVICE */}
       <section id="residential" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-20">
@@ -13,7 +13,7 @@ export default function Services() {
             <Home className="w-4 h-4" />
             <span>Official Residential Services</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight font-display">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B1B3D] tracking-tight font-display">
             Residential Aircon Services
           </h2>
           <p className="text-sm sm:text-base text-gray-600">
@@ -24,11 +24,11 @@ export default function Services() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {SERVICES_LIST.map((service, index) => {
             const icons = [
-              <Snowflake className="w-6 h-6 text-brand-sky" />,
-              <Flame className="w-6 h-6 text-brand-green" />,
-              <Wrench className="w-6 h-6 text-brand-sky" />,
-              <ShieldCheck className="w-6 h-6 text-brand-green" />,
-              <RefreshCw className="w-6 h-6 text-brand-sky" />
+              <Snowflake className="w-12 h-12 text-[#38BDF8]" id="icon-snowflake" />,
+              <Droplet className="w-12 h-12 text-[#10B981]" id="icon-droplet" />,
+              <Wrench className="w-12 h-12 text-[#FF6B6B]" id="icon-wrench" />,
+              <ShieldCheck className="w-12 h-12 text-[#F97316]" id="icon-shield" />,
+              <RefreshCw className="w-12 h-12 text-[#06B6D4]" id="icon-refresh" />
             ];
             
             return (
@@ -39,15 +39,15 @@ export default function Services() {
                 <div className="absolute top-0 left-0 w-2 h-full bg-linear-to-b from-brand-sky to-brand-green opacity-85" />
                 
                 <div className="flex justify-between items-start mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-gray-50 flex items-center justify-center border border-gray-100 group-hover:scale-110 transition-transform">
-                    {icons[index] || <Snowflake className="w-6 h-6" />}
+                  <div className="w-20 h-20 rounded-2xl bg-gray-50 flex items-center justify-center border border-gray-100 group-hover:scale-110 transition-transform duration-300">
+                    {icons[index] || <Snowflake className="w-12 h-12" />}
                   </div>
                   <span className="text-[10px] uppercase tracking-wider font-mono font-bold px-2.5 py-1 bg-gray-100 text-gray-700 rounded-md">
                     {service.tag}
                   </span>
                 </div>
 
-                <h3 className="text-lg font-bold text-gray-900 font-display mb-3">
+                <h3 className="text-lg font-bold text-[#0B1B3D] font-display mb-3">
                   {service.title}
                 </h3>
                 <p className="text-sm text-gray-500 leading-relaxed">

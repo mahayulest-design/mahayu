@@ -4,7 +4,7 @@ import { ShieldCheck, Snowflake, CheckCircle, Zap, Send, Phone } from 'lucide-re
 import { BUSINESS_INFO, COVERED_AREAS } from '../data/businessData';
 import { BookingForm } from '../types';
 
-const heroImg = '/src/assets/images/technician_aircon_1780412493415.png';
+const heroImg = 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1600&q=80';
 
 export default function HeroBooking() {
   const [formData, setFormData] = useState<BookingForm>({
@@ -89,85 +89,83 @@ export default function HeroBooking() {
   };
 
   return (
-    <section id="home" className="relative bg-white pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
-      {/* Soft color ambient blobs */}
-      <div className="absolute top-0 right-0 -z-10 w-96 h-96 rounded-full bg-brand-sky/5 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 -z-10 w-96 h-96 rounded-full bg-brand-green/5 blur-3xl pointer-events-none" />
+    <section
+      id="home"
+      className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${heroImg})` }}
+    >
+      {/* Black transparent overlay */}
+      <div className="absolute inset-0 bg-black/55 z-0" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Soft color ambient blobs */}
+      <div className="absolute top-0 right-0 z-0 w-96 h-96 rounded-full bg-brand-sky/5 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 z-0 w-96 h-96 rounded-full bg-brand-green/5 blur-3xl pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* Left Column: Heading and narrative descriptions */}
-          <div className="lg:col-span-7 space-y-8">
-            <div className="inline-flex items-center space-x-2 bg-brand-green-light text-brand-green px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide shadow-sm">
-              <ShieldCheck className="w-4 h-4 text-brand-green" />
+          <div className="lg:col-span-7 space-y-8 hero-left-content">
+            <div className="inline-flex items-center space-x-2 bg-brand-green/25 text-brand-green-light px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide shadow-sm border border-brand-green/15">
+              <ShieldCheck className="w-4 h-4 text-emerald-400" />
               <span>No. 1 Trusted Inverter Aircon Servicing Partner in Malaysia</span>
             </div>
 
             <div className="space-y-4">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 tracking-tight leading-tight font-display">
-                Welcome to <br />
-                <span className="text-brand-green">{BUSINESS_INFO.companyName}</span>
+              <h1 className="tracking-tight leading-tight font-display uppercase">
+                ❄️ PROFESSIONAL AIRCON SERVICE <br className="hidden sm:block" />
+                <span className="text-brand-green">KL & SELANGOR</span>
               </h1>
-              <div className="space-y-3.5 text-gray-650 text-sm sm:text-base leading-relaxed">
-                <p className="font-bold text-gray-900 text-base sm:text-lg">
-                  Your trusted partner for professional air conditioning services in Kuala Lumpur & Selangor.
+              <p className="text-sm sm:text-base font-extrabold tracking-wide font-display">
+                Reliable • Fast • Professional Air Conditioning Services
+              </p>
+              <div className="space-y-3 leading-relaxed border-t border-white/10 pt-3">
+                <p>
+                  Welcome to <strong>{BUSINESS_INFO.companyName}</strong>, your trusted partner for premium residential and commercial air conditioning services in Kuala Lumpur & Selangor.
                 </p>
                 <p>
-                  We provide reliable aircon installation, repair, chemical cleaning, maintenance, gas top-up, and commercial air conditioning services for residential and business customers.
-                </p>
-                <p>
-                  Our experienced team focuses on quality workmanship, customer satisfaction, professional service, and fast response support.
+                  We provide reliable installation, professional repair, chemical cleaning, gas top-ups, and fast response maintenance with qualified workmanship.
                 </p>
               </div>
             </div>
 
             {/* Quick stats columns */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg">
-              <div className="flex items-start space-x-3 bg-brand-grey p-4 rounded-xl border border-gray-100 shadow-sm transition-all hover:shadow-md">
-                <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-brand-sky-light text-brand-sky-dark flex items-center justify-center font-bold">
-                  <Snowflake className="w-5 h-5 animate-spin-slow" />
+              <div className="flex items-start space-x-3 bg-white/15 p-4 rounded-xl border border-white/15 shadow-sm transition-all hover:shadow-md">
+                <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-emerald-500/25 text-emerald-350 flex items-center justify-center font-bold">
+                  <Snowflake className="w-5 h-5 animate-spin-slow text-brand-green" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-gray-900">30-Day Leaking Warranty</h4>
-                  <p className="text-xs text-gray-500 mt-1">We inspect and rectify for free if water leaks reoccur.</p>
+                  <h4 className="text-sm font-bold text-white">30-Day Leaking Warranty</h4>
+                  <p className="text-xs text-white/85 mt-1">We inspect and rectify for free if water leaks reoccur.</p>
                 </div>
               </div>
 
-              <div className="flex items-start space-x-3 bg-brand-grey p-4 rounded-xl border border-gray-100 shadow-sm transition-all hover:shadow-md">
-                <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-brand-green-light text-brand-green flex items-center justify-center font-bold">
-                  <Zap className="w-5 h-5" />
+              <div className="flex items-start space-x-3 bg-white/15 p-4 rounded-xl border border-white/15 shadow-sm transition-all hover:shadow-md">
+                <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-emerald-500/25 text-emerald-350 flex items-center justify-center font-bold">
+                  <Zap className="w-5 h-5 text-brand-green" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-gray-900">Inverter Specialists</h4>
-                  <p className="text-xs text-gray-500 mt-1">Accurate PCB error diagnosis & energy optimization.</p>
+                  <h4 className="text-sm font-bold text-white">Inverter Specialists</h4>
+                  <p className="text-xs text-white/85 mt-1">Accurate PCB error diagnosis & energy optimization.</p>
                 </div>
               </div>
             </div>
 
-            {/* Hero Visual Block */}
-            <motion.div 
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white max-w-xl lg:max-w-2xl bg-gray-50"
-            >
-              <img
-                src={heroImg}
-                alt="THE KHANS AIRCON Professional Technician Aircon Service"
-                className="w-full h-64 sm:h-80 object-cover hover:scale-[1.02] transition-transform duration-500"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/45 flex flex-col justify-between p-6">
-                <div className="self-start bg-brand-green text-white font-extrabold text-xs tracking-wider uppercase px-4 py-2 rounded-full shadow-md animate-pulse">
-                  GET YOUR FREE AIRCOND SERVICE QUOTE TODAY!
-                </div>
-                <div className="text-white">
-                  <p className="text-xs font-mono uppercase tracking-widest text-brand-sky mb-0.5">Premium Standard</p>
-                  <p className="text-sm sm:text-base font-semibold">Our certified technician diagnosing and cleaning energy-saving Inverter air conditioners.</p>
-                </div>
+            {/* Floating Info Text Badge (Gracefully Floating) */}
+            <div className="pt-4 border-t border-white/20 max-w-xl space-y-3.5">
+              <div className="inline-block bg-emerald-600 text-white font-extrabold text-[10px] tracking-wider uppercase px-4 py-2 rounded-full shadow-md animate-pulse">
+                GET YOUR FREE AIRCOND SERVICE QUOTE TODAY!
               </div>
-            </motion.div>
+              <div className="text-white">
+                <p className="text-xs font-mono uppercase tracking-widest text-[#FFFFFF] font-extrabold mb-1">
+                  ✦ PREMIUM STANDARD
+                </p>
+                <p className="text-xs sm:text-sm text-[#FFFFFF] opacity-90 leading-relaxed font-sans">
+                  Our certified technician diagnosing and cleaning energy-saving Inverter air conditioners to keep your space fresh.
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Integrated Modern Booking Form - Right Column */}
@@ -353,16 +351,45 @@ export default function HeroBooking() {
         </div>
 
         {/* Trusted By Malaysia's Top Organizations Section */}
-        <div className="mt-16 pt-8 border-t border-gray-100/80">
-          <p className="text-center text-[10px] font-black uppercase tracking-widest text-gray-400 mb-6 font-mono">
-            Trusted By Malaysia’s Top Organizations & Brands
+        <div className="mt-16 pt-8 border-t border-white/10">
+          <p className="text-center text-xs font-black uppercase tracking-widest text-white mb-6 font-mono">
+            TRUSTED BY MALAYSIA'S TOP ORGANIZATIONS & BRANDS
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 md:gap-16 opacity-50 grayscale hover:opacity-75 transition-opacity duration-300">
-            <span className="font-sans font-extrabold text-base tracking-widest text-gray-500 uppercase">PETRONAS</span>
-            <span className="font-sans font-black text-lg text-gray-500 tracking-tight">Maybank</span>
-            <span className="font-sans font-bold text-sm tracking-widest text-gray-500">TNB MALAYSIA</span>
-            <span className="font-sans font-black text-xl italic text-gray-500">DHL EXPRESS</span>
-            <span className="font-sans font-extrabold text-base tracking-widest text-gray-500 uppercase">SUNWAY GROUP</span>
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 lg:gap-8 opacity-100 transition-opacity duration-300">
+            {/* Petronas */}
+            <div className="bg-white border border-white px-5 py-3 rounded-lg shadow-sm flex items-center justify-center min-w-[120px] sm:min-w-[140px] hover:scale-105 transition-transform duration-200">
+              <span className="font-sans font-extrabold text-xs sm:text-sm tracking-wider text-[#00A19C] uppercase">
+                PETRONAS
+              </span>
+            </div>
+
+            {/* Maybank */}
+            <div className="bg-white border border-white px-5 py-3 rounded-lg shadow-sm flex items-center justify-center min-w-[120px] sm:min-w-[140px] hover:scale-105 transition-transform duration-200">
+              <span className="font-sans font-black text-xs sm:text-sm tracking-tight text-slate-900 flex items-center gap-1">
+                <span className="bg-[#FFC20E] text-slate-900 px-1.5 py-0.5 rounded text-[10px] sm:text-xs">Maybank</span>
+              </span>
+            </div>
+
+            {/* TNB */}
+            <div className="bg-white border border-white px-5 py-3 rounded-lg shadow-sm flex items-center justify-center min-w-[120px] sm:min-w-[140px] hover:scale-105 transition-transform duration-200">
+              <span className="font-sans font-extrabold text-xs sm:text-sm tracking-widest text-[#005CA9] uppercase flex items-center gap-0.5">
+                TNB <span className="text-[#ED2124] font-black">⚡</span>
+              </span>
+            </div>
+
+            {/* DHL Express */}
+            <div className="bg-white border border-white px-5 py-3 rounded-lg shadow-sm flex items-center justify-center min-w-[120px] sm:min-w-[140px] hover:scale-105 transition-transform duration-200">
+              <span className="font-sans font-black text-sm sm:text-base italic text-[#D00000] tracking-tighter uppercase">
+                DHL <span className="text-[#FFCC00]">EXPRESS</span>
+              </span>
+            </div>
+
+            {/* Sunway Group */}
+            <div className="bg-white border border-white px-5 py-3 rounded-lg shadow-sm flex items-center justify-center min-w-[120px] sm:min-w-[140px] hover:scale-105 transition-transform duration-200">
+              <span className="font-sans font-extrabold text-xs sm:text-sm tracking-widest text-[#1B365D] uppercase">
+                SUNWAY
+              </span>
+            </div>
           </div>
         </div>
 
